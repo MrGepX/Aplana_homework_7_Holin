@@ -102,7 +102,7 @@
                     <properties>
                         <property>
                             <name>listener</name>
-                            <value>io.qameta.allure.junit4.AllureJunit4</value>
+                            <value>com.holin.Initalization.ScreenshotCreator</value>
                         </property>
                     </properties>
                 </configuration>

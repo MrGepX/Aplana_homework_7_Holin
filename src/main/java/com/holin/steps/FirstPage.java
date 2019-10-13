@@ -5,6 +5,7 @@ import com.holin.pages.BasePage;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class FirstPage extends BasePage {
@@ -16,11 +17,13 @@ public class FirstPage extends BasePage {
         element.click();
     }
 
-    @When("Пользователь выбирает меню с параметром String \"(.+)\"")
+    @When("Пользователь выбирает подменю с параметром String \"(.+)\"")
     @Step ("Выбираем подпункт по указанному тексту {text}")
     public void clickOnSubMenu(String text) {
-        //wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//ul [@class= 'lg-menu__sub-list']//a [contains(text(), '" + text + "')]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//ul [@class= 'lg-menu__sub-list']//a [contains(text(), '" + text + "')]"))));
         element = InitializationClass.getDriver().findElement(By.xpath("//ul [@class= 'lg-menu__sub-list']//a [contains(text(), '" + text + "')]"));
         element.click();
     }
+
+
 }

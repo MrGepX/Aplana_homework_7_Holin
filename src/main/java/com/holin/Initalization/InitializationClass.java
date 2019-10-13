@@ -39,4 +39,6 @@ public final class InitializationClass {
 
         wait = new WebDriverWait(driver, 10, 2000);
     }
+
+
 }
