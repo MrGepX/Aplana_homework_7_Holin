@@ -10,6 +10,7 @@ public class InitalizationProperty {
     private static InitalizationProperty instance = null;
     private static Properties initProperties = new Properties();
 
+
     public static String getInitProperty(String key) {
         return initProperties.getProperty(key);
     }
@@ -21,6 +22,7 @@ public class InitalizationProperty {
     private InitalizationProperty() {
         try {
             initProperties.load(new FileInputStream(new File("src/test/resources/InitData.properties")));
+            //initProperties.load(InitalizationProperty.class.getClassLoader().getResourceAsStream("src/test/resources/InitData.properties")); TODO
         } catch (IOException e) {
             e.printStackTrace();
         }
