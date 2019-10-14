@@ -26,7 +26,7 @@ public final class InitializationClass {
     @Before
     public static void init() {
         initPropertyController = InitalizationProperty.getInstance();
-        currentBrowser = System.getProperty("browserName", "firefox");
+        currentBrowser = System.getProperty("browserName", "сhrome");
         System.out.println(currentBrowser);
         switch (currentBrowser) {
             case "chrome" : System.setProperty(
