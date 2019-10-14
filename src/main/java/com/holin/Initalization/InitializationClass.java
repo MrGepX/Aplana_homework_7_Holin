@@ -24,9 +24,14 @@ public final class InitializationClass {
     @Before
     public static void init() {
         initPropertyController = InitalizationProperty.getInstance();
-        System.setProperty(
-                initPropertyController.getInitProperty("chromeDriverName"),
-                initPropertyController.getInitProperty("chromeDriverPath"));
+        switch (initPropertyController.getInitProperty("browserName")) {
+            case "chrome" : System.setProperty(
+                    initPropertyController.getInitProperty("chromeDriverName"),
+                    initPropertyController.getInitProperty("chromeDriverPath"));
+            case "firefox" : System.setProperty(
+                    initPropertyController.getInitProperty("firefoxDriverName"),
+                    initPropertyController.getInitProperty("firefoxDriverPath"));
+        }
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();

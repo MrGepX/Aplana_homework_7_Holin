@@ -89,7 +89,9 @@ public class FormPage extends BasePage {
         @Step ("Пользователь снимает галочку о зарплатной карте")
         public void turnCardUsing() {
             driver.switchTo().frame(0);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", costOfEstate);
             waitForElement(isCardinUseCheck);
+            wait.until(ExpectedConditions.elementToBeClickable(isCardinUseCheck));
             getCurrentPay();
             isCardinUseCheck.click();
             waitForChanges(monthPay, currentPrice);
