@@ -110,7 +110,7 @@ public class FormPage extends BasePage {
         @Step("Пользователь устанавливает галочку о молодой семье")
         public void setYoungFamily() {
             driver.switchTo().frame(0);
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", costOfEstate);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", isCardinUseCheck);
             WebElement youngFamilyCheck = driver.findElement(By.xpath("//div [text() = 'Молодая семья']/following-sibling::div//label"));
             wait.until(ExpectedConditions.elementToBeClickable(youngFamilyCheck));
             youngFamilyCheck.click();
